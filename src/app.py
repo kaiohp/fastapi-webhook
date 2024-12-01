@@ -13,14 +13,13 @@ class WebhookMessage(BaseModel):
 async def webhook_endpoint(message: WebhookMessage):
     try:
         # Log or process the message here
-        print(f"Received message: {message.message}")
+        print(f"Received message: {message.text}")
         print(f"From: {message.sender}")
         print(f"At: {message.timestamp}")
         
         return {
             "status": "success",
-            "message": "Webhook received successfully",
-            "data": message.dict()
+            "message": "Webhook received successfully"
         }
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
