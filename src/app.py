@@ -5,7 +5,7 @@ from typing import Optional
 app = FastAPI()
 
 class WebhookMessage(BaseModel):
-    message: str
+    text: str
     sender: Optional[str] = None
     timestamp: Optional[str] = None
 
